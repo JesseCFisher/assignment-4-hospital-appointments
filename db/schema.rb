@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 2021_02_10_114113) do
   create_table "appointments", force: :cascade do |t|
     t.integer "patient_id", null: false
     t.integer "doctor_id", null: false
-    t.time "start_time"
-    t.time "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["doctor_id"], name: "index_appointments_on_doctor_id"
