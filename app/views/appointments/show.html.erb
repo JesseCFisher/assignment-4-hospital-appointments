@@ -2,12 +2,12 @@
 
 <p>
   <strong>Patient:</strong>
-  <%= @appointment.patient_id %>
+  <%= @appointment.patient.name %>
 </p>
 
 <p>
   <strong>Doctor:</strong>
-  <%= @appointment.doctor_id %>
+  <%= @appointment.doctor.name %>
 </p>
 
 <p>
@@ -18,6 +18,11 @@
 <p>
   <strong>End time:</strong>
   <%= @appointment.end_time %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= distance_of_time_in_words @appointment.end_time, @appointment.start_time %>
 </p>
 
 <%= link_to 'Edit', edit_appointment_path(@appointment) %> |
