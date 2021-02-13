@@ -21,8 +21,8 @@
         <td><%= appointment.patient.name %></td>
         <td>Dr.<%= appointment.doctor.name %></td>
         <td><%= appointment.start_date %></td>
-        <td><%= appointment.start_time %></td>
-        <td><%= appointment.end_time %></td>
+        <td><%= appointment.start_time.strftime("%X") %></td>
+        <td><%= appointment.end_time.strftime("%X") %></td>
         <%# <td><%= appointment.duration %1></td> %>
         <td><%= distance_of_time_in_words appointment.end_time, appointment.start_time %></td>
 
