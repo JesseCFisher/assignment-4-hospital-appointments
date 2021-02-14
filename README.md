@@ -1,3 +1,11 @@
+# Solution Notes
+
+My simplest solution for setting Appointments used an HTML5 datetime picker for two attributes: start_time and end_time. This worked fine but users must select the date of the appointment twice. I wanted to DRY up the UX. 
+
+The next solution gave Appointments three attributes: `start_date`, `start_time`, and `end_time`. The start_date uses jQuery UI datepicker. The start/end time uses an HTML5 time picker. When calculating the duration, there exists a bug if the appointment crosses midnight.
+
+The current solution gives Appointments three time related attributes: `start_date`, `start_time`, and `duration`. The form consists of jQuery UI datepicker, HTML5 timepicker, and a number field for the duration in minutes. This allows appointments to span across midnight. The `end_time` is calculated.
+
 # Assignment 4 - Hospital Appointments
 
 Create CRUD to book appointments at a hospital. Create plausible column names and table organization for
